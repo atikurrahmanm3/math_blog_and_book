@@ -1,0 +1,35 @@
+{% extends 'base.html'%}
+{% load static%}
+{% block title %}Home{% endblock title%}
+
+{% block body %}
+<div class="container-fluid py-5">
+
+    <div class="row">
+        <div class="col-md-3 border-right">
+            <div class="h3 text-center  py-2">সূচি পত্র</div>
+            <hr>
+            <div class="list-group">
+                {% for cha in chapter%}
+                <a href="?chapter={{cha.id}}" class="list-group-item list-group-item-action"> {{cha.chapter_name}}</a>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="col-md-9">
+            <div class="row">
+                <div class="heading col-md-12 text-center">
+                    <p class="h3">
+                        গনিতের জেমস বন্ড <br> <cite class="h5">- মত্তাসিন পাহলভী </cite>
+                    </p>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                {% for content in contents%}
+                {{content.title}}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
